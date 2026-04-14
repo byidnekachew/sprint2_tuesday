@@ -6,8 +6,16 @@ def validate_ticket(code):
 
 
 def get_ticket_tier(code):
-    pass
-
+    if validate_ticket(code) == False:
+        raise ValueError("Inserted ticket code is invalid")
+    else:
+        if int(code[2]) <= 3 and int(code[2]) >= 0:
+            return "General"
+        elif int(code[2]) <= 6 and int(code[2]) >= 4:
+            return "VIP"
+        else:
+            return "Platinum"
+        
 
 def calculate_total(prices, discount=0):
     pass

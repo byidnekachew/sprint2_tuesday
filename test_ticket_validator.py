@@ -20,7 +20,7 @@ def test_nonstring_code():
 
 def test_ticket_tier_valerr():
     with pytest.raises(ValueError):
-        validate_ticket("JA573917")
+        get_ticket_tier("JA573917")
 
 def test_ticket_tier_platinum_upper():
     tier = get_ticket_tier("TK973917")
@@ -45,3 +45,5 @@ def test_ticket_tier_general_upper():
 def test_ticket_tier_general_lower():
     tier = get_ticket_tier("TK073917")
     assert tier == "General"
+
+
